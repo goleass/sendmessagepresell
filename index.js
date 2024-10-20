@@ -42,11 +42,12 @@ app.post('/send', async (req, res) => {
     // Formatar a mensagem a ser enviada no Telegram
     const message = `Recebi o seguinte JSON:\n${JSON.stringify(jsonData, null, 2)}`;
 
-    bot.sendMessage(TELEGRAM_CHAT_ID, `Mensagem: ${message}`);
+    const resp = bot.sendMessage(TELEGRAM_CHAT_ID, `Mensagem: ${message}`);
 
     // Retornar sucesso
     res.json({
-      status: 'success'
+      status: 'success',
+      opa: resp
     });
   } catch (error) {
     console.error('Erro ao enviar mensagem para o Telegram:', error);
