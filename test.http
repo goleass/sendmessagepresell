@@ -1,4 +1,4 @@
-POST http://localhost:3000/send HTTP/1.1
+POST https://sendmessagepresell.vercel.app/send HTTP/1.1
 content-type: application/json
 
 {
