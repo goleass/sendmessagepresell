@@ -3,11 +3,14 @@ const axios = require('axios');
 const bodyParser = require('body-parser');
 const TelegramBot = require('node-telegram-bot-api');
 const dotenv = require('dotenv')
+const cors = require('cors');
 
 dotenv.config()
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors());
 
 // Use body-parser para interpretar o corpo da requisição como JSON
 app.use(bodyParser.json());
