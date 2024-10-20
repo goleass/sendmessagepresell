@@ -47,7 +47,9 @@ app.post('/send', async (req, res) => {
     // Retornar sucesso
     res.json({
       status: 'success',
-      opa: resp
+      opa: resp,
+      TELEGRAM_BOT_TOKEN,
+      TELEGRAM_CHAT_ID
     });
   } catch (error) {
     console.error('Erro ao enviar mensagem para o Telegram:', error);
